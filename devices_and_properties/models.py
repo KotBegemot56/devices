@@ -6,6 +6,6 @@ class Devices(models.Model):
 
 
 class Properties(models.Model):
-    properties = models.ManyToManyField("Devices")
+    properties = models.ManyToManyField("Devices", related_name="properties")
     name = models.CharField(max_length=200)
     content = models.CharField(max_length=200)

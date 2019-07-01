@@ -8,7 +8,16 @@ class DevicesSerializer(serializers.ModelSerializer):
         model = Devices
         fields = '__all__'
 
+
 class PropertiesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Properties
         fields = '__all__'
+
+
+class DevicesPropertiesSerializer(serializers.ModelSerializer):
+    properties = PropertiesSerializer(many=True)
+
+    class Meta:
+        model = Devices
+        fields = "__all__"
